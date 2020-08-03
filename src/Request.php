@@ -1,6 +1,6 @@
 <?php
 namespace Ramphor\Facades;
 
-class Facade
+class Request extends Facade
 {
 }
