@@ -18,11 +18,6 @@ class wpdb
      */
     public function __construct(&$wpdb)
     {
-        if (!$wpdb instanceof wpdb) {
-            // Please read more info at https://developer.wordpress.org/reference/classes/wpdb/
-            error_log('The wpdb must be instance of class wpdb.');
-            return;
-        }
         $this->wpdb = $wpdb;
     }
 

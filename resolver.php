@@ -26,9 +26,9 @@ if (!class_exists(Resolver::class)) {
          */
         public function resolve($name)
         {
-            if ($instances[$name]) {
-                $cache = $instances[$name]['cache'];
-                $callable = $instances[$name]['callable'];
+            if (isset($this->instances[$name])) {
+                $cache = $this->instances[$name]['cache'];
+                $callable = $this->instances[$name]['callable'];
                 if (is_object($callable)) {
                     return array(
                         'instance' => $callable,

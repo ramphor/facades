@@ -74,7 +74,7 @@ abstract class Facade
      *
      * @throws \RuntimeException
      */
-    public static function __callStatic($name, $args)
+    public static function __callStatic($method, $args)
     {
         $instance = static::getFacadeRoot();
         if (!$instance) {
