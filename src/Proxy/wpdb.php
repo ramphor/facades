@@ -26,9 +26,20 @@ class wpdb
         return $this->wpdb;
     }
 
+    public function convertCamelCaseMethodName($matches)
+    {
+        if (isset($matches[1])) {
+            return '_' . strtolower($matches[1]);
+        }
+    }
+
     public function __call($name, $args)
     {
-        $callback = array($this->wpdb, $name);
+        $callback = array($this->wpdb, preg_replace_callback(
+            '/([A-Z])/',
+            array($this, 'convertCamelCaseMethodName'),
+            $name
+        ));
         if (is_callable($callback)) {
             return call_user_func_array($callback, $args);
         }
