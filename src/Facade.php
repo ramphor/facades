@@ -1,6 +1,8 @@
 <?php
 namespace Ramphor\Facades;
 
+use RuntimeException;
+
 abstract class Facade
 {
     protected static $resolver;

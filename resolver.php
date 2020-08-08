@@ -3,6 +3,7 @@
 namespace Ramphor\Facades;
 
 use Ramphor\Facades\Proxy\wpdb;
+use Ramphor\Logger\Logger;
 
 if (!class_exists(Resolver::class)) {
     class Resolver
@@ -45,7 +46,8 @@ if (!class_exists(Resolver::class)) {
     }
 
     $resolver = new Resolver();
-    $resolver>bind('wpdb', new wpdb($GLOBALS['wpdb']), true);
+    $resolver->bind('logger', Logger::instance(), true);
+    $resolver->bind('wpdb', new wpdb($GLOBALS['wpdb']), true);
 
     Facade::setFacadeResolver($resolver);
 
