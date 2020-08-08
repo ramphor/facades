@@ -10,7 +10,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "ramphor/logger": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "Ramphor\\Facades\\": "src/"
