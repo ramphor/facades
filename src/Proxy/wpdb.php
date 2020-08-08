@@ -1,8 +1,6 @@
 <?php
 namespace Ramphor\Facades\Proxy;
 
-use Ramphor\Facades\Logger;
-
 class wpdb
 {
     /**
