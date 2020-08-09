@@ -49,7 +49,7 @@ class wpdb
     {
         return sprintf(
             '%s%s',
-            $this->wpdb,
+            $this->wpdb->prefix,
             $name
         );
     }
