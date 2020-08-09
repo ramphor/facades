@@ -1,6 +1,8 @@
 <?php
 namespace Ramphor\Facades\Proxy;
 
+use BadMethodCallException;
+
 class wpdb
 {
     /**
@@ -43,6 +45,7 @@ class wpdb
         if (is_callable($callback)) {
             return call_user_func_array($callback, $args);
         }
+        throw new BadMethodCallException(sprintf('Call the undefined method %s::%s', __CLASS__, $name));
     }
 
     public function get_table($name)
